@@ -36,6 +36,7 @@ namespace SolidPresentation
                     throw new InvalidOperationException(string.Format("Unknown recipient type '{0}'", messageCodeInfo.RecipientType));
             }
 
+            //Combine user and system data
             var mergeData = CombineData(messageData, standardData);
 
             //Create image
