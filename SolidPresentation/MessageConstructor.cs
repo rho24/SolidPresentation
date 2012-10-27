@@ -62,38 +62,155 @@ namespace SolidPresentation
         }
 
         private XDocument GetStudentStandardData(string recipientId) {
+            //Doing stuff
+            //Doing stuff
+            //Doing stuff
+            //Doing stuff
+            //Doing stuff
+            //Doing stuff
+            //Doing stuff
+            //Doing stuff
+            //Doing stuff
+            //Doing stuff
+            //Doing stuff
+            //Doing stuff
+            //Doing stuff
             throw new NotImplementedException();
         }
 
         private XDocument GetProspectStandardData(string recipientId) {
+            //Doing stuff
+            //Doing stuff
+            //Doing stuff
+            //Doing stuff
+            //Doing stuff
+            //Doing stuff
+            //Doing stuff
+            //Doing stuff
+            //Doing stuff
+            //Doing stuff
+            //Doing stuff
+            //Doing stuff
+            //Doing stuff
             throw new NotImplementedException();
         }
 
         private XDocument GetStaffStandardData(string recipientId) {
+            //Doing stuff
+            //Doing stuff
+            //Doing stuff
+            //Doing stuff
+            //Doing stuff
+            //Doing stuff
+            //Doing stuff
+            //Doing stuff
+            //Doing stuff
+            //Doing stuff
+            //Doing stuff
+            //Doing stuff
+            //Doing stuff
             throw new NotImplementedException();
         }
 
         private XDocument GetTutorStandardData(string recipientId) {
+            //Doing stuff
+            //Doing stuff
+            //Doing stuff
+            //Doing stuff
+            //Doing stuff
+            //Doing stuff
+            //Doing stuff
+            //Doing stuff
+            //Doing stuff
+            //Doing stuff
+            //Doing stuff
+            //Doing stuff
+            //Doing stuff
             throw new NotImplementedException();
         }
 
         private XDocument GetSelfRegisteredStandardData(string recipientId) {
+            //Doing stuff
+            //Doing stuff
+            //Doing stuff
+            //Doing stuff
+            //Doing stuff
+            //Doing stuff
+            //Doing stuff
+            //Doing stuff
+            //Doing stuff
+            //Doing stuff
+            //Doing stuff
+            //Doing stuff
+            //Doing stuff
             throw new NotImplementedException();
         }
 
         private XDocument CombineData(XDocument messageData, XDocument standardData) {
+            //Doing stuff
+            //Doing stuff
+            //Doing stuff
+            //Doing stuff
+            //Doing stuff
+            //Doing stuff
+            //Doing stuff
+            //Doing stuff
+            //Doing stuff
+            //Doing stuff
+            //Doing stuff
+            //Doing stuff
+            //Doing stuff
             throw new NotImplementedException();
         }
 
         private MessageImage CreateEmailImage(MessageCodeInfo messageCodeInfo, XDocument mergeData) {
+            //Doing stuff
+            //Doing stuff
+            //Doing stuff
+            //Doing stuff
+            //Doing stuff
+            //Doing stuff
+            //Doing stuff
+            //Doing stuff
+            //Doing stuff
+            //Doing stuff
+            //Doing stuff
+            //Doing stuff
+            //Doing stuff
             throw new NotImplementedException();
         }
 
         private MessageImage CreatePdfImage(MessageCodeInfo messageCodeInfo, XDocument mergeData) {
+            //Doing stuff
+            //Doing stuff
+            //Doing stuff
+            //Doing stuff
+            //Doing stuff
+            //Doing stuff
+            //Doing stuff
+            //Doing stuff
+            //Doing stuff
+            //Doing stuff
+            //Doing stuff
+            //Doing stuff
+            //Doing stuff
             throw new NotImplementedException();
         }
 
         private MessageImage CreateSmsImage(MessageCodeInfo messageCodeInfo, XDocument mergeData) {
+            //Doing stuff
+            //Doing stuff
+            //Doing stuff
+            //Doing stuff
+            //Doing stuff
+            //Doing stuff
+            //Doing stuff
+            //Doing stuff
+            //Doing stuff
+            //Doing stuff
+            //Doing stuff
+            //Doing stuff
+            //Doing stuff
             throw new NotImplementedException();
         }
     }
