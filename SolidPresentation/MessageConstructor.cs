@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Xml.Linq;
+using SolidPresentation.Utility;
 
 namespace SolidPresentation
 {
@@ -12,207 +13,18 @@ namespace SolidPresentation
             if (messageData == null) throw new ArgumentNullException("messageData");
 
             //Grab message code info
-            var messageCodeInfo = GetMessageCodeInfo(messageCode);
+            var messageCodeInfo = new MessageCodeInfoProvider().Get(messageCode);
 
             //Retrieve standard data
-            XDocument standardData;
-            switch (messageCodeInfo.RecipientType) {
-                case "student":
-                    standardData = GetStudentStandardData(recipientId);
-                    break;
-                case "prospect":
-                    standardData = GetProspectStandardData(recipientId);
-                    break;
-                case "staff":
-                    standardData = GetStaffStandardData(recipientId);
-                    break;
-                case "tutor":
-                    standardData = GetTutorStandardData(recipientId);
-                    break;
-                case "selfRegistered":
-                    standardData = GetSelfRegisteredStandardData(recipientId);
-                    break;
-                default:
-                    throw new InvalidOperationException(string.Format("Unknown recipient type '{0}'", messageCodeInfo.RecipientType));
-            }
-
+            var standardData = new StandardDataProvider().Get(messageCodeInfo, recipientId);
+            
             //Combine user and system data
-            var mergeData = CombineData(messageData, standardData);
+            var mergeData = new DataCombiner().Combine(messageData, standardData);
 
             //Create image
-            MessageImage image;
-            switch (messageCodeInfo.MediumType) {
-                case "email":
-                    image = CreateEmailImage(messageCodeInfo, mergeData);
-                    break;
-                case "pdf":
-                    image = CreatePdfImage(messageCodeInfo, mergeData);
-                    break;
-                case "sms":
-                    image = CreateSmsImage(messageCodeInfo, mergeData);
-                    break;
-                default:
-                    throw new InvalidOperationException(string.Format("Unknown medium type '{0}'", messageCodeInfo.MediumType));
-            }
+            var image = new MessageImageCreator().Create(messageCodeInfo, mergeData);
 
             return new Message {MessageCode = messageCode, RecipientId = recipientId, MessageData = mergeData, MessageImage = image};
-        }
-
-        private MessageCodeInfo GetMessageCodeInfo(string messageCode) {
-            return new MessageCodeInfo {RecipientType = "student", MediumType = "email", TemplateName = "e-stud.xsl"};
-        }
-
-        private XDocument GetStudentStandardData(string recipientId) {
-            //Doing stuff
-            //Doing stuff
-            //Doing stuff
-            //Doing stuff
-            //Doing stuff
-            //Doing stuff
-            //Doing stuff
-            //Doing stuff
-            //Doing stuff
-            //Doing stuff
-            //Doing stuff
-            //Doing stuff
-            //Doing stuff
-            throw new NotImplementedException();
-        }
-
-        private XDocument GetProspectStandardData(string recipientId) {
-            //Doing stuff
-            //Doing stuff
-            //Doing stuff
-            //Doing stuff
-            //Doing stuff
-            //Doing stuff
-            //Doing stuff
-            //Doing stuff
-            //Doing stuff
-            //Doing stuff
-            //Doing stuff
-            //Doing stuff
-            //Doing stuff
-            throw new NotImplementedException();
-        }
-
-        private XDocument GetStaffStandardData(string recipientId) {
-            //Doing stuff
-            //Doing stuff
-            //Doing stuff
-            //Doing stuff
-            //Doing stuff
-            //Doing stuff
-            //Doing stuff
-            //Doing stuff
-            //Doing stuff
-            //Doing stuff
-            //Doing stuff
-            //Doing stuff
-            //Doing stuff
-            throw new NotImplementedException();
-        }
-
-        private XDocument GetTutorStandardData(string recipientId) {
-            //Doing stuff
-            //Doing stuff
-            //Doing stuff
-            //Doing stuff
-            //Doing stuff
-            //Doing stuff
-            //Doing stuff
-            //Doing stuff
-            //Doing stuff
-            //Doing stuff
-            //Doing stuff
-            //Doing stuff
-            //Doing stuff
-            throw new NotImplementedException();
-        }
-
-        private XDocument GetSelfRegisteredStandardData(string recipientId) {
-            //Doing stuff
-            //Doing stuff
-            //Doing stuff
-            //Doing stuff
-            //Doing stuff
-            //Doing stuff
-            //Doing stuff
-            //Doing stuff
-            //Doing stuff
-            //Doing stuff
-            //Doing stuff
-            //Doing stuff
-            //Doing stuff
-            throw new NotImplementedException();
-        }
-
-        private XDocument CombineData(XDocument messageData, XDocument standardData) {
-            //Doing stuff
-            //Doing stuff
-            //Doing stuff
-            //Doing stuff
-            //Doing stuff
-            //Doing stuff
-            //Doing stuff
-            //Doing stuff
-            //Doing stuff
-            //Doing stuff
-            //Doing stuff
-            //Doing stuff
-            //Doing stuff
-            throw new NotImplementedException();
-        }
-
-        private MessageImage CreateEmailImage(MessageCodeInfo messageCodeInfo, XDocument mergeData) {
-            //Doing stuff
-            //Doing stuff
-            //Doing stuff
-            //Doing stuff
-            //Doing stuff
-            //Doing stuff
-            //Doing stuff
-            //Doing stuff
-            //Doing stuff
-            //Doing stuff
-            //Doing stuff
-            //Doing stuff
-            //Doing stuff
-            throw new NotImplementedException();
-        }
-
-        private MessageImage CreatePdfImage(MessageCodeInfo messageCodeInfo, XDocument mergeData) {
-            //Doing stuff
-            //Doing stuff
-            //Doing stuff
-            //Doing stuff
-            //Doing stuff
-            //Doing stuff
-            //Doing stuff
-            //Doing stuff
-            //Doing stuff
-            //Doing stuff
-            //Doing stuff
-            //Doing stuff
-            //Doing stuff
-            throw new NotImplementedException();
-        }
-
-        private MessageImage CreateSmsImage(MessageCodeInfo messageCodeInfo, XDocument mergeData) {
-            //Doing stuff
-            //Doing stuff
-            //Doing stuff
-            //Doing stuff
-            //Doing stuff
-            //Doing stuff
-            //Doing stuff
-            //Doing stuff
-            //Doing stuff
-            //Doing stuff
-            //Doing stuff
-            //Doing stuff
-            //Doing stuff
-            throw new NotImplementedException();
         }
     }
 }
