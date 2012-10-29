@@ -1,0 +1,70 @@
+https://en.wikipedia.org/wiki/SOLID_(object-oriented_design)
+
+OO - different levels of experience.
+
+Not as scary as you might think, you're actually doing it already e.g. WebPages.
+
+
+
+EMessaging message constructor, takes message code, recipient id and message data. Produces a message with its Image. Based on CAMEL system.
+
+
+Example code is an example, far simpler than actual business code.
+Abstractions i show will be over the top for this example.
+
+~200 lines 10x in production
+
+SRP:
+Get code out of MessageConstructor
+More files but more manageable
+But we could go further with StandardData and ImageCreation
+
+Pros - Readability, testability, re-use
+
+OpenClosed:
+Changing code can break code. Other uses of your code.
+More SRP but seperated specific retrievers from generic code (could have shared logic in component).
+Other patterns can be used.
+Not completely Open closed (wait till later)
+
+Pros - Not breaking things that use your code
+
+OpenClosed2:
+Extend an object, don't change it.
+Using inheritence
+
+LSP:
+Applies more to frameworks with multiple implementations of interfaces etc.
+Caching example.
+Software is coded against expected behaviour of classes, don't break that expected behaviour.
+
+ISP:
+IClonable
+IEnumerable<>
+IList/ICollection (seperate out indexing/count, what is IsReadOnly on about???)
+Object (John Skeet - Get ToString and GetHashCode out of there)
+
+Pros - srp in interfaces re-useable, allow generic extensions/features around interfaces.
+
+DIP:
+Dependency injection - Allows flexibilty, testibility, configure an application without changing the underlying code, allows component re-use in different circumstances.
+
+Dependencies (transactions, files, stats)
+
+Poor mans:
+Still using concrete types to make life easier in applications.
+
+IOC:
+Extremely powerful.
+Scoping.
+plugabble frameworks.
+keeps configuration out of business code.
+
+
+
+Wrap up:
+We've over abstracted this example (+ 20 files). But if this was 2000 lines of code we would have maybe 30 extra files:
+each with 60 lines of code,
+each with a specific purpose,
+each re-usable in a number of scenarios,
+and much more maintainable.
