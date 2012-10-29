@@ -7,6 +7,24 @@ namespace SolidPresentation
 {
     public class MessageConstructor
     {
+        private readonly IDataCombiner _dataCombiner;
+        private readonly IImageCreationComponent _imageCreationComponent;
+        private readonly IMessageCodeInfoProvider _messageCodeInfoProvider;
+        private readonly IStandardDataComponent _standardDataComponent;
+
+        public MessageConstructor(IMessageCodeInfoProvider messageCodeInfoProvider,
+                                  IStandardDataComponent standardDataComponent,
+                                  IDataCombiner dataCombiner,
+                                  IImageCreationComponent imageCreationComponent) {
+            _messageCodeInfoProvider = messageCodeInfoProvider;
+            _standardDataComponent = standardDataComponent;
+            _dataCombiner = dataCombiner;
+            _imageCreationComponent = imageCreationComponent;
+        }
+
+        public MessageConstructor()
+            : this(new MessageCodeInfoProvider(), new StandardDataComponent(), new DataCombiner(), new ImageCreationComponent()) {}
+
         public Message Construct(string messageCode, string recipientId, XDocument messageData) {
             //Validate inputs
             if (messageCode == null) throw new ArgumentNullException("messageCode");
@@ -14,16 +32,16 @@ namespace SolidPresentation
             if (messageData == null) throw new ArgumentNullException("messageData");
 
             //Grab message code info
-            var messageCodeInfo = new MessageCodeInfoProvider().Get(messageCode);
+            var messageCodeInfo = _messageCodeInfoProvider.Get(messageCode);
 
             //Retrieve standard data
-            var standardData = new StandardDataComponent().Get(messageCodeInfo, recipientId);
-            
+            var standardData = _standardDataComponent.Get(messageCodeInfo, recipientId);
+
             //Combine user and system data
-            var mergeData = new DataCombiner().Combine(messageData, standardData);
+            var mergeData = _dataCombiner.Combine(messageData, standardData);
 
             //Create image
-            var image = new ImageCreationComponent().Create(messageCodeInfo, mergeData);
+            var image = _imageCreationComponent.Create(messageCodeInfo, mergeData);
 
             return new Message {MessageCode = messageCode, RecipientId = recipientId, MessageData = mergeData, MessageImage = image};
         }

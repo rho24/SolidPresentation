@@ -3,7 +3,7 @@ using System.Xml.Linq;
 
 namespace SolidPresentation.Utility
 {
-    public class DataCombiner
+    public class DataCombiner : IDataCombiner
     {
         public XDocument Combine(XDocument data1, XDocument data2) {
             //Doing stuff
