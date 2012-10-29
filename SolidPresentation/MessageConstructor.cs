@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Xml.Linq;
+using SolidPresentation.Components;
 using SolidPresentation.Utility;
 
 namespace SolidPresentation
@@ -16,13 +17,13 @@ namespace SolidPresentation
             var messageCodeInfo = new MessageCodeInfoProvider().Get(messageCode);
 
             //Retrieve standard data
-            var standardData = new StandardDataProvider().Get(messageCodeInfo, recipientId);
+            var standardData = new StandardDataComponent().Get(messageCodeInfo, recipientId);
             
             //Combine user and system data
             var mergeData = new DataCombiner().Combine(messageData, standardData);
 
             //Create image
-            var image = new MessageImageCreator().Create(messageCodeInfo, mergeData);
+            var image = new ImageCreationComponent().Create(messageCodeInfo, mergeData);
 
             return new Message {MessageCode = messageCode, RecipientId = recipientId, MessageData = mergeData, MessageImage = image};
         }

@@ -39,6 +39,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Components\ImageCreationComponent.cs" />
+    <Compile Include="Components\ImageCreation\EmailImageCreator.cs" />
+    <Compile Include="Components\ImageCreation\IImageCreator.cs" />
+    <Compile Include="Components\ImageCreation\PdfImageCreator.cs" />
+    <Compile Include="Components\ImageCreation\SmsImageCreator.cs" />
+    <Compile Include="Components\StandardDataComponent.cs" />
+    <Compile Include="Components\StandardData\IStandardDataRetrever.cs" />
+    <Compile Include="Components\StandardData\ProspectDataRetirever.cs" />
+    <Compile Include="Components\StandardData\SelfRegisteredDataRetriever.cs" />
+    <Compile Include="Components\StandardData\StaffDataRetriever.cs" />
+    <Compile Include="Components\StandardData\StudentDataRetriever.cs" />
+    <Compile Include="Components\StandardData\TutorDataRetriever.cs" />
     <Compile Include="Message.cs" />
     <Compile Include="MessageCodeInfo.cs" />
     <Compile Include="MessageConstructor.cs" />
@@ -46,8 +58,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utility\DataCombiner.cs" />
     <Compile Include="Utility\MessageCodeInfoProvider.cs" />
-    <Compile Include="Utility\MessageImageCreator.cs" />
-    <Compile Include="Utility\StandardDataProvider.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
