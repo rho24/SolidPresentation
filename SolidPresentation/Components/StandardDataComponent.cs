@@ -14,15 +14,6 @@ namespace SolidPresentation.Components
             _retrievers = retrievers;
         }
 
-        public StandardDataComponent()
-            : this(new IStandardDataRetrever[] {
-                new StudentDataRetriever(),
-                new ProspectDataRetirever(),
-                new StaffDataRetriever(),
-                new TutorDataRetriever(),
-                new SelfRegisteredDataRetriever()
-            }) {}
-
         public XDocument Get(MessageCodeInfo messageCodeInfo, string recipientId) {
             var retriever = _retrievers.SingleOrDefault(r => r.CanRetrieveFor(messageCodeInfo));
 

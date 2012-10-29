@@ -14,13 +14,6 @@ namespace SolidPresentation.Components
             _creators = creators;
         }
 
-        public ImageCreationComponent()
-            : this(new IImageCreator[] {
-                new EmailImageCreator(),
-                new PdfImageCreator(),
-                new SmsImageCreator()
-            }) {}
-
         public MessageImage Create(MessageCodeInfo messageCodeInfo, XDocument mergeData) {
             var retriever = _creators.SingleOrDefault(r => r.CanCreateFor(messageCodeInfo));
 

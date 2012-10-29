@@ -22,9 +22,6 @@ namespace SolidPresentation
             _imageCreationComponent = imageCreationComponent;
         }
 
-        public MessageConstructor()
-            : this(new MessageCodeInfoProvider(), new StandardDataComponent(), new DataCombiner(), new ImageCreationComponent()) {}
-
         public Message Construct(string messageCode, string recipientId, XDocument messageData) {
             //Validate inputs
             if (messageCode == null) throw new ArgumentNullException("messageCode");

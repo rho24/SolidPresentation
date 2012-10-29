@@ -3,6 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolidPresentation", "SolidPresentation\SolidPresentation.csproj", "{B866304A-78E6-49B9-9BF5-0FE2C2FB1183}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{62AC5101-7D16-4A3C-8851-8204DD79BA3B}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Program", "Program\Program.csproj", "{D68DDC5B-3247-4BAE-9D4E-2A6AADD7979B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +22,10 @@ Global
 		{B866304A-78E6-49B9-9BF5-0FE2C2FB1183}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B866304A-78E6-49B9-9BF5-0FE2C2FB1183}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B866304A-78E6-49B9-9BF5-0FE2C2FB1183}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D68DDC5B-3247-4BAE-9D4E-2A6AADD7979B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D68DDC5B-3247-4BAE-9D4E-2A6AADD7979B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D68DDC5B-3247-4BAE-9D4E-2A6AADD7979B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D68DDC5B-3247-4BAE-9D4E-2A6AADD7979B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
