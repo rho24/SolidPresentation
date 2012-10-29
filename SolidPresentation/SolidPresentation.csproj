@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Components\UnsafeCachingStandardDataComponent.cs" />
     <Compile Include="Components\ImageCreationComponent.cs" />
     <Compile Include="Components\ImageCreation\EmailImageCreator.cs" />
     <Compile Include="Components\ImageCreation\IImageCreator.cs" />

@@ -16,7 +16,7 @@ namespace SolidPresentation.Components
             new SelfRegisteredDataRetriever()
         };
 
-        public XDocument Get(MessageCodeInfo messageCodeInfo, string recipientId) {
+        public virtual XDocument Get(MessageCodeInfo messageCodeInfo, string recipientId) {
             var retriever = _retrievers.SingleOrDefault(r => r.CanRetrieveFor(messageCodeInfo));
 
             if(retriever == null)
